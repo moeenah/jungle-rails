@@ -1,0 +1,15 @@
+<tr>
+  <td align="left">
+    <h4><%= product.name %></h4>
+  </td>
+  <td align="center">
+    <%= quantity %>
+  </td>
+  <td align="center">
+    $<%= individual_price %>
+    <br>
+    <% if quantity > 1 %>
+    x<%= quantity %> = $<%= total_price %>
+    <% end %>
+  </td>
+</tr>

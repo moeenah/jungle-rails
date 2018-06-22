@@ -12,12 +12,26 @@ class OrdersController < ApplicationController
     if order.valid?
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
+      send_email(order)
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
 
   rescue Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
+  end
+
+  # after_action :send_email, only: [:create]
+
+  def send_email(order)
+     # if order.save
+      # @order = Order.find(params[:id])
+      puts order.id
+      product_list = LineItem.where(order_id: order.id)
+      order_info = Order.find(order.id)
+      # puts @order
+      Notifier.order_receipt(current_user, product_list, order_info).deliver_now
+    # end
   end
 
   private
@@ -31,7 +45,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "#{current_user.name}'s Jungle Order",
       currency:    'cad'
     )
   end

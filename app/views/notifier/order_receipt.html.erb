@@ -1,0 +1,62 @@
+<html>
+
+  <head>
+    <style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th {
+      border-bottom: solid 1px black;
+
+    }
+    td {
+      border-right: solid 1px black;
+      border-left: solid 1px black;
+      border-bottom: solid 1px black;
+    }
+    tbody {
+      border-bottom: solid 1px black;
+     }
+    </style>
+  </head>
+  <body>
+  <section class="notifier-show">
+
+  <header class="page-header">
+    <p>Thanks for your order <%= @user.name %>, this is your order receipt:</p>
+  </header>
+
+  <div class="order-summary jumbotron">
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="1">Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @list.each do |item| %>
+        <%= render 'product', product: Product.find(item.product_id),quantity: item.quantity, individual_price: (item.item_price_cents / 100.0), total_price: (item.total_price_cents / 100.0)%>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">
+          TOTAL:
+        </th>
+        <th>
+          <% num = Order.find(@order.id).total_cents %>
+         $<%= num / 100.0 %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+
+  </div>
+
+</section>
+</body>
+</html>
