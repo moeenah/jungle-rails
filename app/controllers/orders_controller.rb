@@ -21,17 +21,12 @@ class OrdersController < ApplicationController
     redirect_to cart_path, flash: { error: e.message }
   end
 
-  # after_action :send_email, only: [:create]
-
+  # send email receipt to user on succesful order placement
   def send_email(order)
-     # if order.save
-      # @order = Order.find(params[:id])
       puts order.id
       product_list = LineItem.where(order_id: order.id)
       order_info = Order.find(order.id)
-      # puts @order
       Notifier.order_receipt(current_user, product_list, order_info).deliver_now
-    # end
   end
 
   private

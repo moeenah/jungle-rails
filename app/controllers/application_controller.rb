@@ -3,7 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  add_flash_types :danger, :info, :warning, :success
+
   private
+
+  #authentication for admin pages
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name === 'hi' && password === ENV['ADMIN_PASSWORD']
+    end
+  end
+  helper_method :authenticate
+
 
   def cart
     # value = cookies[:cart] || JSON.generate({})

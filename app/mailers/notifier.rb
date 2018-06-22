@@ -1,9 +1,9 @@
 class Notifier < ApplicationMailer
- def order_receipt(user_info, list, order)
+ def order_receipt(user_info, product_list, order_info)
     @user = user_info
-    @list = list
-    @order = order
+    @list = product_list
+    @order = order_info
     mail(to: user_info.email,
-         subject: 'Jungle Receipt', from: 'no-reply@jungle.com')
+         subject: 'Jungle Order Receipt', from: 'no-reply@jungle.com')
   end
 end
