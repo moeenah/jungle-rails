@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   #authentication for admin pages
   def authenticate
     authenticate_or_request_with_http_basic do |name, password|
-      name === 'hi' && password === ENV['ADMIN_PASSWORD']
+      name === ENV['ADMIN_USERNAME'] && password === ENV['ADMIN_PASSWORD']
     end
   end
   helper_method :authenticate
