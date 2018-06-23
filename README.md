@@ -1,9 +1,19 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2
 
+## Final Product
 
-## Setup
+Shop Catalogue
+!["picture of shop catalogue"](https://github.com/moeenah/chattyApp/blob/master/docs/shop_catalogue.jpg)
+Sample Product Page
+!["Picture of Product Page"](https://github.com/moeenah/chattyApp/blob/master/docs/product_page.png)
+Sample Checkout
+!["gif of sample checkout"](https://github.com/moeenah/chattyApp/blob/master/docs/checkout.gif)
+Admin Access to Products
+!["Picture of Admin Product Page"](https://github.com/moeenah/chattyApp/blob/master/docs/admin_product_page.jpg)
+
+## Getting Started
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
@@ -15,7 +25,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
-## Stripe Testing
+## Stripe Usage
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
