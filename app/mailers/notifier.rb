@@ -4,6 +4,6 @@ class Notifier < ApplicationMailer
     @list = product_list
     @order = order_info
     mail(to: user_info.email,
-         subject: 'Jungle Order Receipt', from: 'no-reply@jungle.com')
+         subject: 'Jungle Order Receipt (Order ID: #{order_info.id})', from: 'no-reply@jungle.com')
   end
 end
