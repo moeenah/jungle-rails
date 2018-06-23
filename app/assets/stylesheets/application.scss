@@ -12,11 +12,14 @@ body {
 }
 
 .user-info {
+  color: #767676;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
+  margin-bottom: 3px;
   padding-right: 10px;
-  font-size: 0.9em;
+  padding-top: 10px;
+  font-size: 0.8em;
 }
 
 .order-email {
@@ -44,3 +47,27 @@ body {
 .cart-home-button:hover { color: white;
                           text-decoration: none !important;
                           background-color: #4e82af; }
+
+.form_for {
+
+  margin-left: 15em;
+}
+
+.review_form {
+  resize: none;
+  width: 50%;
+
+}
+
+.cart_icon {
+  margin-right: 70px;
+}
+
+.quantity {
+  bottom: 66px;
+  position: absolute;
+}
+
+.rating-text {
+  color: #3e7bb9;
+}

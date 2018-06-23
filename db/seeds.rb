@@ -134,3 +134,15 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+# creating sample reviews
+#user 4's reviews
+Review.create(product_id: 1, user_id: 4, description: "USER 4's description of product_id 1", rating: 5)
+Review.create(product_id: 2, user_id: 4, description: "USER 4's description of product_id 2", rating: 5)
+Review.create(product_id: 3, user_id: 4, description: "USER 4's description of product_id 3", rating: 5)
+Review.create(product_id: 4, user_id: 4, description: "USER 4's description of product_id 4", rating: 5)
+# user 5's reviews
+Review.create(product_id: 1, user_id: 5, description: "USER 5's description of product_id 1", rating: 5)
+Review.create(product_id: 2, user_id: 5, description: "USER 5's description of product_id 2", rating: 5)
+Review.create(product_id: 3, user_id: 5, description: "USER 5's description of product_id 3", rating: 5)
+Review.create(product_id: 4, user_id: 5, description: "USER 5's description of product_id 4", rating: 5)

@@ -1,0 +1,22 @@
+<div class="col-sm-6">
+  <dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd><%= name %></dd>
+    <dt>Rating</dt>
+    <dd><%= rating %> / 5</dd>
+    <dt>Review</dt>
+    <dd><h4><%= description %></h3></dd>
+    <% if date == updated_date %>
+      <dt>Submitted</dt>
+      <dd><%= date %></dd>
+    <% else %>
+      <dt>Updated at</dt>
+      <dd><%= date %></dd>
+    <% end %>
+    <% if current_user != nil && current_user.id === user_id %>
+    <br>
+    <dd><%= link_to 'Delete Your Review', review_path(review_id: review_id) , method: :delete, class:"cart-home-button" %></dd>
+
+    <% end %>
+  </dl>
+</div>

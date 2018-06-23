@@ -13,6 +13,14 @@
   <p class="description">
     <%= product.description %>
   </p>
+  <span class='quantity'>
+    <span class='rating-text'>Rating:</span>
+    <% if Review.find_by(product_id: product.id) != nil %>
+     <%= Review.where(product_id: product.id).average(:rating).round %> / 5
+     <% else %>
+     Unrated
+     <% end %>
+  </span>
   <footer class="actions">
       <!-- removes add button if product is sold out -->
       <% if !product.sold_out? %>

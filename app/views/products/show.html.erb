@@ -22,8 +22,32 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <br>
+            <% if current_user %>
+             <dt>Review This Product</dt>
+              <dd>
+              <%= form_for [@product, @create_review] do |form| %>
+
+                  <%= form.text_area :description, class: 'review_form' %>
+
+
+                  <%= form.select(:rating, [1,2,3,4,5]).insert(0, "Rating")  %>
+
+
+                  <%= form.submit 'Post Review' , class: 'cart-home-button' %>
+
+             <br>
+            <% end %>
+            </dd>
+          <% end %>
         </dl>
       </div>
+    </div>
+    <h2>Reviews</h2>
+    <div class="reviews">
+     <% @review.each do |review| %>
+        <%= render 'review', user_id: review.user_id, review_id: review.id, name: User.find(review.user_id).name, rating: review.rating, description: review.description, date: review.created_at.in_time_zone("Mountain Time (US & Canada)").strftime('%b %d %I:%M%p %Y'), updated_date: review.updated_at.in_time_zone("Mountain Time (US & Canada)").strftime('%b %d %I:%M%p %Y') %>
+      <% end %>
     </div>
 
   </article>
