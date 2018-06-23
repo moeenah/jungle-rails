@@ -5,13 +5,13 @@ A mini e-commerce application built with Rails 4.2
 ## Final Product
 
 Shop Catalogue
-!["picture of shop catalogue"](https://github.com/moeenah/chattyApp/blob/master/docs/shop_catalogue.jpg)
+!["picture of shop catalogue"](https://github.com/moeenah/jungle-rails/blob/master/docs/shop_catalogue.jpg)
 Sample Product Page
-!["Picture of Product Page"](https://github.com/moeenah/chattyApp/blob/master/docs/product_page.png)
+!["Picture of Product Page"](https://github.com/moeenah/jungle-rails/blob/master/docs/product_page.png)
 Sample Checkout
-!["gif of sample checkout"](https://github.com/moeenah/chattyApp/blob/master/docs/checkout.gif)
+!["gif of sample checkout"](https://github.com/moeenah/jungle-rails/blob/master/docs/checkout.gif)
 Admin Access to Products
-!["Picture of Admin Product Page"](https://github.com/moeenah/chattyApp/blob/master/docs/admin_product_page.jpg)
+!["Picture of Admin Product Page"](https://github.com/moeenah/jungle-rails/blob/master/docs/admin_product_page.jpg)
 
 ## Getting Started
 
