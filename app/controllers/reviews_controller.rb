@@ -10,15 +10,12 @@ class ReviewsController < ApplicationController
                         description: params[:review][:description],
                         rating: params[:review][:rating]
                         )
-    # puts params[:review][:description]
     review.save
       if review.save
-        # session[:user_id] = user.id
         redirect_to product
       else
         redirect_to product
       end
-    # raise "yay, I'm HEERE!"
   end
 
   def destroy
@@ -26,10 +23,8 @@ class ReviewsController < ApplicationController
     puts 'hi'
     puts params[:review_id]
     destroy_review = Review.destroy(params[:review_id])
-    # puts params[:review][:description]
     destroy_review.save
       if destroy_review.save
-        # session[:user_id] = user.id
         redirect_to :back
       else
         redirect_to :back

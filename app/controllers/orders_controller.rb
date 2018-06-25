@@ -53,9 +53,6 @@ class OrdersController < ApplicationController
     )
     cart.each do |product_id, details|
       product_chosen = Product.find(product_id)
-      puts 'HEEEEEEEEEEEEEEEEEEEEEY'
-      # original_quantity = product_chosen.quantity
-      # new_quantity = details['quantity'].to_i
       update_quantity = product_chosen.quantity - details['quantity'].to_i
       product_chosen.update(quantity: update_quantity)
 
