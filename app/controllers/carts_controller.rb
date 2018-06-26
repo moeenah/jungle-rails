@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
   # denies access if user isn't logged in
-  before_filter :authorize
+  # before_filter :authorize
 
   def show
   end
